@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A Question for Mansi</title>
+    <!-- Tailwind CSS for styling --><script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts for a romantic feel --><link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Inter:wght@400;600&family=Playfair+Display:ital,wght@0,700;1,400&display=swap" rel="stylesheet">
+    
+    <style>
+        /* Apply custom fonts */
+        .font-heading {
+            font-family: 'Dancing Script', cursive;
+        }
+        .font-subheading {
+            font-family: 'Playfair Display', serif;
+        }
+        body, .font-body {
+            font-family: 'Inter', sans-serif;
+        }
+        
+        /* Modal transition styles */
+        #modal {
+            transition: opacity 0.3s ease-in-out;
+        }
+        #modal > div {
+            transition: transform 0.3s ease-in-out;
+            transform: scale(0.95);
+        }
+        #modal:not(.hidden) > div {
+            transform: scale(1);
+        }
+
+        /* NEW: Removed watermark style. Added pink gradient background */
+        body {
+            background-image: linear-gradient(to br, #fff1f2, #ffe4e6); /* Light pink gradient */
+            background-attachment: fixed; /* This keeps it still when you scroll */
+        }
+
+        /* This is the main white content box */
+        .container {
+            position: relative;
+            z-index: 10; /* Sits on top of the animation */
+            background-color: white; 
+        }
+        #modal {
+            z-index: 50; /* Ensure modal is on top */
+        }
+
+        /* Responsive images for the gallery */
+        .gallery-img {
+            aspect-ratio: 3/4;
+            object-fit: cover;
+            width: 100%;
+        }
+
+        /* --- NEW: Moving Horse Animation --- */
+
+        /* Animation keyframes */
+        @keyframes scrollUp {
+            from {
+                transform: translateY(0%);
+            }
+            to {
+                transform: translateY(-50%);
+            }
+        }
+
+        /* Side panels container */
+        .side-panel {
+            position: fixed;
+            top: 0;
+            height: 100vh;
+            width: 100px; /* Width of the side panel */
+            overflow: hidden; /* Hides the horses as they scroll off-screen */
+            z-index: 5; /* Behind the main content but above the body */
+            opacity: 0.2; /* Makes the horses subtle */
+            font-size: 2.5rem; /* Size of the horse emojis */
+            line-height: 1.2;
+            color: #c026d3; /* A nice magenta color */
+        }
+
+        .side-panel.left {
+            left: 0;
+            text-align: right;
+        }
+
+        .side-panel.right {
+            right: 0;
+            text-align: left;
+        }
+
+        /* The column of horses that will animate */
+        .horse-column {
+            /* This animation loops forever and takes 30s to complete one scroll */
+            animation: scrollUp 30s linear infinite;
+            /* We double the content to make the loop seamless */
+            white-space: nowrap;
+        }
+        /* --- End of Animation Styles --- */
+
+    </style>
+</head>
+<body>
+
+    <!-- NEW: Animated Side Panels -->
+    <div class="side-panel left">
+        <div class="horse-column">
+            <!-- Column 1 (doubled for seamless loop) -->
+            <div>
+                🐎<br>🐎<br>🐎<br>🐎<br>🐎<br>🐎<br>🐎<br>🐎<br>🐎<br>🐎<br>🐎<br>🐎<br>🐎<br>🐎<br>🐎<br>🐎<br>🐎<br>🐎<br>🐎<br>🐎<br>
+            </div>
+            <div>
+                🐎<br>🐎<br>🐎<br>🐎<br>🐎<br>🐎<br>🐎<br>🐎<br>🐎<br>🐎<br>🐎<br>🐎<br>🐎<br>🐎<br>🐎<br>🐎<br>🐎<br>🐎<br>🐎<br>🐎<br>
+            </div>
+        </div>
+    </div>
+    <div class="side-panel right">
+        <div class="horse-column">
+            <!-- Column 2 (doubled for seamless loop) -->
+            <div>
+                🐎<br>🐎<br>🐎<br>🐎<br>🐎<br>🐎<br>🐎<br>🐎<br>🐎<br>🐎<br>🐎<br>🐎<br>🐎<br>🐎<br>🐎<br>🐎<br>🐎<br>🐎<br>🐎<br>🐎<br>
+            </div>
+            <div>
+                🐎<br>🐎<br>🐎<br>🐎<br>🐎<br>🐎<br>🐎<br>🐎<br>🐎<br>🐎<br>🐎<br>🐎<br>🐎<br>🐎<br>🐎<br>🐎<br>🐎<br>🐎<br>🐎<br>🐎<br>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Main Content Container --><div class="container max-w-4xl mx-auto p-6 md:p-12 my-10 bg-white shadow-2xl rounded-xl border border-rose-200">
+
+        <!-- Header --><header class="text-center mb-10">
+            <h1 class="font-heading text-5xl md:text-7xl font-bold text-rose-700 leading-tight">
+                My Dearest Mansi,
+            </h1>
+            <p class="font-subheading text-xl md:text-2xl text-gray-700 mt-4 italic">
+                A journey of a thousand miles begins with a single 'Yes'...
+            </p>
+        </header>
+
+        <!-- Opening Message --><section class="mb-12 text-center text-lg text-gray-800 leading-relaxed max-w-2xl mx-auto">
+            <p class="mb-4">
+                From the moment our paths crossed, my world gained a new dimension of joy, laughter, and endless possibility. You light up every room you enter, and every day with you is an adventure I cherish.
+            </p>
+            <p>
+                Today, I stand before you (virtually, at least!) with a question that means everything to me. Before you answer, let me show you how beautiful you are!!!.
+            </p>
+        </section>
+
+        <!-- Image Gallery --><div class="grid grid-cols-2 md:grid-cols-3 gap-6 mb-12">
+            <!-- Images are now linked to the files you uploaded. Spaces are encoded as %20 for URLs -->
+            <img src="Mansi%20by%20a%20fountain1.jpeg" alt="" class="rounded-xl shadow-xl gallery-img transform hover:scale-105 transition duration-300 ease-in-out">
+            <img src="Mansi%20by%20a%20fountain2.jpeg" alt="" class="rounded-xl shadow-xl gallery-img transform hover:scale-105 transition duration-300 ease-in-out">
+            <img src="Mansi%20by%20a%20fountain3.jpeg" alt="" class="rounded-xl shadow-xl gallery-img transform hover:scale-105 transition duration-300 ease-in-out">
+            <img src="Mansi%20smiling%20with%20flowers.jpeg" alt="" class="rounded-xl shadow-xl gallery-img transform hover:scale-105 transition duration-300 ease-in-out">
+            <img src="Mansi%20in%20black%20dress.jpeg" alt="" class="rounded-xl shadow-xl gallery-img transform hover:scale-105 transition duration-300 ease-in-out">
+            <img src="Mansi%20in%20yellow.jpeg" alt="" class="rounded-xl shadow-xl gallery-img transform hover:scale-105 transition duration-300 ease-in-out">
+            <img src="Mansi%20in%20white%20outfit.jpeg" alt="" class="rounded-xl shadow-xl gallery-img transform hover:scale-105 transition duration-300 ease-in-out">
+            <!-- UPDATED IMAGE LINKS HERE -->
+            <img src="Mansi%20by%20a%20fountain5.jpeg" alt="" class="rounded-xl shadow-xl gallery-img transform hover:scale-105 transition duration-300 ease-in-out">
+            <img src="Mansi%20by%20a%20fountain6.jpeg" alt="" class="rounded-xl shadow-xl gallery-img transform hover:scale-105 transition duration-300 ease-in-out">
+        </div>
+
+        <!-- Why Our Forever Will Be an Epic Tale --><section class="mb-12 text-center">
+            <h2 class="font-subheading text-4xl md:text-5xl text-gray-800 mb-6 italic">
+                Why Our Forever Will Be an Epic Tale
+            </h2>
+            <p class="text-lg text-gray-700 mb-8 max-w-xl mx-auto">
+                Marriage isn't just a destination; it's a grand adventure we embark on together. Here's a glimpse of what's in store:
+            </p>
+
+            <div class="grid md:grid-cols-2 gap-8 text-left">
+                
+                <!-- Advantages -->
+                <div class="bg-gradient-to-br from-green-50 to-teal-50 p-6 rounded-lg shadow-inner border border-green-200">
+                    <h3 class="text-2xl font-semibold text-green-800 mb-4 flex items-center">
+                        <span class="mr-2 text-3xl">✅</span> The "Yes, Please!" List (Advantages)
+                    </h3>
+                    <ul class="list-disc list-inside space-y-3 text-gray-700 text-lg">
+                        <li><strong class="text-green-700">Zero Boredom Guarantee:</strong> With me, every day is a new episode of a sitcom, sometimes a drama, but always entertaining!</li>
+                        <li><strong class="text-green-700">Your Personal Cheerleader:</strong> I'll be your biggest fan, loudest motivator, and unwavering support in every dream you chase.</li>
+                        <li><strong class="text-green-700">Endless Flirting & Compliments:</strong> Prepare for a lifetime of knowing how incredibly beautiful and amazing you are, constantly.</li>
+                        <li><strong class="text-green-700">Healthy Debates & Makeup Hugs:</strong> We'll have our moments, but they'll always end with understanding and a stronger bond.</li>
+                        <li><strong class="text-green-700">Household Hero:</strong> From dishes to laundry, we're a team. Shared responsibilities mean more time for us.</li>
+                        <li><strong class="text-green-700">Adventure Awaits:</strong> Whether it's a quiet evening or a spontaneous trip, life with me is full of delightful surprises.</li>
+                        <li><strong class="text-green-700">A Safe Haven:</strong> I promise to be your comfort, your confidant, and your safe space, always.</li>
+                    </ul>
+                </div>
+
+                <!-- Disadvantages -->
+                <div class="bg-gradient-to-br from-red-50 to-orange-50 p-6 rounded-lg shadow-inner border border-red-200">
+                    <h3 class="text-2xl font-semibold text-red-800 mb-4 flex items-center">
+                        <span class="mr-2 text-3xl">⚠️</span> The "Fine Print" (Disadvantages)
+                    </h3>
+                    <ul class="list-disc list-inside space-y-3 text-gray-700 text-lg">
+                        <li><strong class="text-red-700">Constant Irritation (of the fun kind):</strong> My puns are legendary, my teasing relentless (but always loving!).</li>
+                        <li><strong class="text-red-700">Master of the Roast:</strong> Your friends might get jealous of how much I'll lovingly roast you. It's how I show affection! 😉</li>
+                        <!-- FIX: Corrected typo 'classS' to 'class' -->
+                        <li><strong class="text-red-700">Sudden Bursts of Affection:</strong> Be prepared for random hugs, kisses, and declarations of love at any given moment. (Is this really a disadvantage?)</li>
+                        <li><strong class="text-red-700">My Undying Devotion:</strong> You'll be stuck with a man who thinks the world of you, forever.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Our Story, Our Future --><section class="mb-12 text-center text-lg text-gray-800 leading-relaxed max-w-2xl mx-auto">
+            <h2 class="font-subheading text-4xl md:text-5xl text-gray-800 mb-6 italic">
+                Our Story, Our Future
+            </h2>
+            <p class="mb-4">
+                <!-- FIX: Corrected typo 'new' to 'knew' -->
+                Mansi, you are the missing piece I never knew I was looking for. You challenge me, inspire me, and make me want to be a better person every single day. With you, life isn't just lived; it's experienced in vibrant color.
+            </p>
+            <p class="mb-4">
+                Imagine us, years from now, still laughing at my terrible jokes, still exploring new places, and still falling deeper in love with each passing moment. That's the future I dream of, and it's a future I want to build only with you.
+            </p>
+            <p>
+                Every smile, every shared secret, every quiet moment has led me to this very question.
+            </p>
+        </section>
+
+
+        <!-- The Big Question --><section class="text-center mt-16 p-8 bg-rose-50 rounded-lg shadow-inner border border-rose-300">
+            <h2 class="font-heading text-5xl md:text-6xl font-bold text-rose-700 mb-6 leading-tight">
+                Mansi, My Love...
+            </h2>
+            <p class="text-2xl text-gray-800 mb-10 max-w-md mx-auto font-subheading italic">
+                Will you be my partner in crime, my confidante, my best friend, and my wife?
+            </p>
+
+            <!-- Buttons --><div class="flex flex-col sm:flex-row justify-center gap-6">
+                <button id="yesButton" class="bg-green-600 hover:bg-green-700 text-white font-bold py-4 px-10 rounded-full text-2xl shadow-xl transform transition-transform hover:scale-110 active:scale-95 ring-4 ring-green-300">
+                    YES! A Thousand Times YES!
+                </button>
+                <button id="noButton" class="bg-red-600 hover:bg-red-700 text-white font-bold py-4 px-10 rounded-full text-2xl shadow-xl transform transition-transform hover:scale-110 active:scale-95 ring-4 ring-red-300">
+                    No (nah toh thi he, zyada se zyada na he rahegi!)
+                </button>
+            </div>
+        </section>
+
+    </div> <!-- End Main Container -->
+
+    <!-- Modal (Hidden by default) --><div id="modal" class="fixed inset-0 bg-black bg-opacity-80 flex items-center justify-center p-4 z-50 hidden" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+        <div class="bg-white rounded-lg p-8 md:p-12 text-center shadow-2xl max-w-lg w-full transform transition-all duration-300 ease-out">
+            <h3 id="modal-title" class="font-heading text-5xl font-bold text-rose-700 mb-6">
+                She said YES!
+            </h3>
+            <p class="text-2xl text-gray-800 leading-relaxed">
+                You are always stuck with Rijens
+                <span class="block mt-4 text-4xl">💖✨</span>
+            </p>
+            <button id="closeButton" class="mt-8 bg-rose-600 hover:bg-rose-700 text-white font-bold py-3 px-8 rounded-full text-lg shadow-md transform transition-transform hover:scale-105">
+                Close
+            </button>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const yesButton = document.getElementById('yesButton');
+            const noButton = document.getElementById('noButton');
+            const modal = document.getElementById('modal');
+            const closeButton = document.getElementById('closeButton');
+            const modalTitle = document.getElementById('modal-title');
+
+            // Function to show the modal
+            const showModal = (isYes) => {
+                if (isYes) {
+                    modalTitle.innerText = "She said YES!";
+                } else {
+                    // A little joke, as requested for the 'No' button
+                    modalTitle.innerText = "Nice try... but it's a YES!";
+                }
+                modal.classList.remove('hidden');
+            };
+
+            // Function to hide the modal
+            const hideModal = () => {
+                modal.classList.add('hidden');
+            };
+
+            // Event Listeners
+            yesButton.addEventListener('click', () => showModal(true));
+            noButton.addEventListener('click', () => showModal(false));
+            closeButton.addEventListener('click', hideModal);
+
+            // Close modal by clicking on the background
+            modal.addEventListener('click', (e) => {
+                if (e.target === modal) {
+                    hideModal();
+                }
+            });
+        });
+    </script> <!-- FIX: Corrected the closing tag from </SCENARIUSCRIPT> -->
+
+</body>
+</html>
